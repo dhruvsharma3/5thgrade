@@ -1,3 +1,4 @@
+
 el1 = 0
 while el1 !="1":
  num1 = input("First number please:")

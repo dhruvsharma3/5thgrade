@@ -1,4 +1,4 @@
-
+import math     
 el1 = 0
 while el1 !="1":
  num1 = input("First number please:")
@@ -7,7 +7,8 @@ while el1 !="1":
  num1 = int(num1)
  num2 = int(num2)
  if op1 == "+":
-     result = (num1 + num2)
+    global result
+    result = (num1 + num2)
     
  elif op1 =="-":
      result = (num1 - num2)
@@ -17,18 +18,19 @@ while el1 !="1":
      while div1 != 1: 
       ask = input("Do you want a decimal or whole number? 1 for decimal,2 for whole number:")
       if ask == "1":
-          
-       if num2 == 0:
-         result = "Error"
-         
-       else:
-        result = (num1 / num2)
+        try:
+            result = (num1 / num2)
+        except ZeroDivisionError:
+           print("Zero division = :(")
         div1 = 1
       elif ask == "2":
-       result = (num1 // num2)
+       try:
+            result = (num1 // num2)
+       except ZeroDivisionError:
+           print("Zero division = :(")
        div1 = 1
       else:
-       print("You lose everything!")
+       print(":(")
 
  elif op1 == "*":
      result = (num1 * num2)
